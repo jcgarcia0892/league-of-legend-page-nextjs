@@ -1,0 +1,13 @@
+
+
+.animation-container {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all .3s ease;
+
+    &.enable {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+}
