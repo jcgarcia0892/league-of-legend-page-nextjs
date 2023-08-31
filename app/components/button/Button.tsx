@@ -4,10 +4,10 @@ import './button.scss'
 
 interface Props {
     onClick: MouseEventHandler<HTMLButtonElement>;
-    text: string;
-    type: 'btn--primary' | 'btn--secondary';
+    text?: string;
+    type?: 'btn--primary' | 'btn--secondary';
     icon?: string | undefined;
-    size: 'btn--big' | 'btn--normal' | 'btn--small';
+    size?: 'btn--big' | 'btn--normal' | 'btn--small';
     border?: 'btn-no--border';
 }
 

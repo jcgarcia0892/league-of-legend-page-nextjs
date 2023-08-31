@@ -1,13 +1,18 @@
 import React, { FC } from 'react'
 import './champion-card.scss';
 import { ChampionCard } from '@/app/interfaces/champions-card'
+import { useRouter } from 'next/navigation';
 interface Props {
     championCard: ChampionCard,
 };
 
-const goTo = (url: string) => {}
 
 export const ChampionCardComponent: FC<Props> = ({championCard}) => {
+  const router = useRouter();
+  const goTo = (url: string) => {
+    router.push(`/champion/${url}`);
+  }
+
   return (
     <figure
         className="card"

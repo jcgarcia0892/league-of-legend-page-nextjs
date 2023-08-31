@@ -12,7 +12,7 @@ import TitleAnimated from '../components/title-animated/Title-animated';
 const Rules = () => {
   const [ videoPath ] = useState(`/videos/${videoPaths[randomNumber()]}.mp4`);
   const [ videoPowerPostion, setVideoPowerPostion ] = useState(0);
-  const [ videoPowerPath, setVideoPowerPath] = useState('assets/images/get-gold.webm');
+  const [ videoPowerPath, setVideoPowerPath] = useState('/images/get-gold.webm');
   const [ scollInY, setScollInY ] = useState<number>(0);
   const [ rulesInfo, setRulesInfo ] = useState(rules);
   const [ powerInfo, setPowerInfo ] = useState(power);
