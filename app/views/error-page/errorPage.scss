@@ -1,0 +1,20 @@
+@use '../../../public/styles/variables' as var;
+.error__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 70%;
+    min-height: calc(100vh - 16rem);
+    text-align: center;
+
+    h3 {
+        margin-bottom: 2rem;
+        color: var.$c-primary-light;
+    }
+
+    button.btn-base {
+        max-width: 400px;
+    }
+}

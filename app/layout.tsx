@@ -1,6 +1,7 @@
 import './globals.scss'
 import type { Metadata } from 'next'
 import { Navbar } from './components/navbar/Navbar'
+import { Footer } from './components/footer/Footer'
 
 export const metadata: Metadata = {
   title: 'League Of Legends | Nextjs',
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
@@ -30,7 +32,7 @@ export default function RootLayout({
           <div className="mt-80">
             {children}
           </div>
-          {/* footer */}
+          <Footer />
         </main>  
       </body>
     </html>

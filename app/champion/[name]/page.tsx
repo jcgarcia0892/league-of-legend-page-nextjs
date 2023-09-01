@@ -3,6 +3,7 @@ import { Champion } from '@/app/interfaces/champions-object';
 import { baseUrl, getChampion } from '@/app/services/champion.service';
 import { Skill } from '@/app/interfaces/champion.interface';
 import ChampionView from '@/app/views/champion/Champion';
+import { ErrorPage } from '@/app/views/error-page/ErrorPage';
 
 interface Props {
     params: {name: string};
@@ -10,14 +11,19 @@ interface Props {
 
 const Champion: FC<Props> = async ({params}) => {
     const champion = await getChampionData(params.name);
-    return (
-        <ChampionView champion={champion} />
-    )
+    if(!!champion) {
+      return (
+          <ChampionView champion={champion} />
+      )
+    }
+    return <ErrorPage name={params.name} />
+    
 }
 
 export default Champion
 
 const getChampionData = async(id: string): Promise<any> => {
+  try {
     const {data, version} = await getChampion(id);
 
     const imagesPath = getImagesPath(id, version);
@@ -41,6 +47,8 @@ const getChampionData = async(id: string): Promise<any> => {
       ...champProps
     }
     return champion;
+  } catch (error) {}
+
 }
 
 const getImagesPath = (idChamp: string, version: string): {imgSplash: string, imgSquare: string, imgLoading: string} => {

@@ -164,8 +164,8 @@ const ChampionView: FC<Props> = ({champion}) => {
                 <div className="champion__skins__thumbs">
                     <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
                         {
-                            championData.skins.map((skin) => (
-                                <SwiperSlide>
+                            championData.skins.map((skin, i) => (
+                                <SwiperSlide key={i}>
                                     <div className="champion__skins__thumbs__container">
                                         <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_${skin.num}.jpg`} />
                                         <div className="champion__skins__thumbs__container__title">
